@@ -12,8 +12,8 @@ def np_str(arr):
 x = np.array([[0,1.,0], [1, 0, 1], [0, 1, 1]]).T
 
 # inputs order (column ids)
-order = [0,1,2,0,1,2]
-#order = [0,1,0,1]
+#order = [0,1,2,0,1,2]
+order = [0,1,0,1]
 
 # initial weight vector (column vectors = neurons)
 w = np.array([[1.5,0,0.5], [0, 0.5, 1.5]]).T
@@ -34,6 +34,9 @@ for i in order:
 
   # winner update rule
   w[:, winner] += eta * (inp - w[:, winner])
+
+  # renormalizing
+  w /= np.linalg.norm(w, axis=0)
 
   # printing result
   print('Input %d: %s,\tactivation %s,\twinner %d,\tweights %s' % (i, np_str(inp), np_str(activation), winner, np_str(w)))
