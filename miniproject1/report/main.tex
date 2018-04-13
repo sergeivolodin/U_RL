@@ -1,0 +1,37 @@
+\documentclass[12pt, twocolumn]{article} 
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{url, hyperref}
+
+\begin{document}
+\title{Unsupervised and Reinforcement Learning CS-434\\Mini-project 1}
+
+\author{Volodin Sergei}
+
+\maketitle
+\thispagestyle{empty}
+
+\begin{abstract}
+   In this report, a dataset of hand-written digits is analyzed using the Kohonen maps.
+\end{abstract}
+
+\section{Kohonen map. Theory}
+\begin{enumerate}
+\item The map equation is: $y(x)=\arg\min\|x-w_k\|$. Therefore, it can be represented as two layers: first, calculating the distances to the cluster centers $w_k$, and then calculating the corresponding maximal value. On the other hand, the version with normalized weights and inhibitory connections uses only 1 layer.
+\item Initialization: $w_k\leftrightarrow 0$, Competition: cluster centers $w_k$ compete for the data points, Cooperation: Many output neurons are excited. Adaptation: cluster center is moved towards the data point
+\item If each neuron is associated with a $s$-dimentional vector, and the distance $A(i,j)$ for choosing the region of neurons is $\|\|_s$ between these vectors, the Kohonen map would build these vectors so that they represent the data best
+\item Topographical map is an abstract representation of spatial objects. Kohonen map gives exactly that, meaning that objects which are close in input are close in output. The somatosensory part of the brain is a topographical map of the body. The visual cortex is a topographical map of the retina.
+\item Oja's rule. ?
+\end{enumerate}
+
+\section{Experiment}
+\begin{enumerate}
+\item your answers for the theoretical questions
+\item your choice of the learning rate and a description how you determine convergence
+\item visualization and description of the learned prototypes,
+\item a description and visualization of your method of assigning the digit that is represented by a prototype,
+\item your results of the exploration of different network sizes and widths of the neighborhood function with a discussion of the results
+\item your results and discussion of varying the width of the neighborhood function over time.
+\end{enumerate}
+
+\end{document}
